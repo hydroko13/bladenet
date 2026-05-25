@@ -7,7 +7,7 @@ with bn.create_server(('127.0.0.1', 8988)) as server:
         server.process()
         
         
-        for event in server.events():
-            print(event)
+        for payload, addr in server.events():
+            print("Got", payload, 'from', addr)
         time.sleep(0.02)
 
